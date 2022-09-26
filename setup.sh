@@ -1,3 +1,8 @@
+#Check for root
+if [$EUID -ne 0]
+  then echo "Please run as root"
+  exit
+fi
 
 #Multimedia Codecs
 apt-get install Ubuntu-restricted-extras
