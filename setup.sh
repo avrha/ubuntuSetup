@@ -1,7 +1,3 @@
-#!/bin/bash
-
-#Update system
-apt update && apt upgrade -y && apt autoremove -y
 
 #Multimedia Codecs
 apt-get install Ubuntu-restricted-extras
@@ -21,6 +17,7 @@ apt install curl wget hydra -y
 
 #Network tools
 apt install net-tools nmap sftp wireshark openvpn gufw -y
+ufw enable
 
 #Java
 apt install default-jre default-jdk -y
@@ -32,14 +29,14 @@ pip3 install pwntools
 #Install Google chrome and earth
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"/etc/apt/sources.list.d/google.list'
-apt update
-apt install google-chrome-stable googleearth-package
+apt update -y
+apt install google-chrome-stable googleearth-package -y
+apt install -y gnome-shell-extension-manager
 
 #Misc
-apt install qbittorent virtualbox vlc -y
+apt install qbittorent virtualbox vlc bleachbit -y
 snap install spotify
 snap install discord
 snap install obs --classic
-
 
 
